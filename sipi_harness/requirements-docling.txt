@@ -1,0 +1,3 @@
+# Optional layout-aware document ingestion backend.
+# Install only when processing complex PDFs/books into reviewed evidence chunks.
+docling

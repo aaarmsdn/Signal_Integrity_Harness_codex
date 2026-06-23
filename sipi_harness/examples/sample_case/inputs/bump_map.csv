@@ -1,0 +1,5 @@
+interface,side,pin,row,column,x_mm,y_mm,net,role,layer
+DEMO,tx,A1,A,1,0.0,0.0,lane0,tx_near,F.Cu
+DEMO,rx,A1,A,1,10.0,0.0,lane0,rx_far,F.Cu
+DEMO,tx,A2,A,2,0.0,0.2,lane1,tx_near,B.Cu
+DEMO,rx,A2,A,2,10.0,0.2,lane1,rx_far,B.Cu

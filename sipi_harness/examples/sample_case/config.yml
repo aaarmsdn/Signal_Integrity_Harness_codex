@@ -1,0 +1,84 @@
+harness:
+  name: sipi_harness
+  version: 0.1.0
+  execution_mode: dry_run
+  design_run_mode: stage_review
+  case_name: sample_case
+  output_root: outputs
+  log_root: logs
+
+inputs:
+  request: "Sample controlled-impedance x2 channel dry-run."
+  spec_pdf: null
+  design_strategy: null
+  stackup: inputs/stackup.yml
+  bump_map: inputs/bump_map.csv
+  port_intents: inputs/port_intents.json
+  kicad_project: null
+  kicad_board: null
+  touchstone: null
+
+knowledge_intake:
+  require_web_research: false
+  require_user_references_review: false
+  web_research_dir: knowledge_intake/web_research
+  user_references_dir: knowledge_intake/user_references
+
+workflow:
+  stages:
+    strategy: {enabled: true, automated: semi, requires_human_review: true}
+    pcb_package: {enabled: true, automated: semi, requires_human_review: true}
+    em_solve: {enabled: true, automated: semi, requires_human_review: true}
+    bench: {enabled: true, automated: semi, requires_human_review: true}
+    reports: {enabled: true, automated: true, requires_human_review: false}
+
+geometry_rules:
+  units: mm
+  min_trace_clearance_mm: 0.025
+  min_pad_clearance_mm: 0.025
+  max_delay_skew_ui_fraction: 0.10
+  require_continuous_reference_plane: true
+  require_port_intents: true
+
+em_solver:
+  tool: hfss3dlayout
+  aedt_version: "2025.1"
+  python_env: null
+  import_method: direct_aedb_fallback
+  port_method: circuit
+  sweep:
+    basis: nyquist_multiple
+    data_rate_gtps: 8.0
+    stop_multiple_of_nyquist: 3.0
+    smoke_points: 13
+    engineering_points: 201
+    sweep_type: Fast
+    max_delta_s: 0.05
+    max_passes: 4
+    min_passes: 1
+  validation:
+    require_nonempty_touchstone: true
+    require_expected_port_count: true
+    require_frequency_data_lines: true
+
+ads:
+  enabled: false
+  min_version: "2025 Update 2"
+  hpeesof_dir: null
+  ads_python: null
+  workspace: null
+  dataset_dir: data
+  schematic_validation_required: true
+
+reports:
+  output_dir: reports
+  generate_stage_pdfs: false
+  include_layout_images: false
+  include_sparameter_plots: false
+  include_eye_or_mask_plots: false
+
+waivers:
+  allowed: true
+  file: waivers.yml
+  require_reason: true
+  require_owner: true

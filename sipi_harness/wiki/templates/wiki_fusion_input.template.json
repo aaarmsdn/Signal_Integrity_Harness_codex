@@ -1,0 +1,121 @@
+{
+  "request_parse": {
+    "interface": "INTERFACE_NAME",
+    "spec_version": "SPEC_VERSION",
+    "lane_count": "LANE_COUNT_OR_NULL",
+    "data_rate_gbps": null,
+    "package": {
+      "type": "PACKAGE_OR_BOARD_TYPE",
+      "layer_count": null,
+      "dk": null,
+      "df": null
+    },
+    "channel_length_mm": null
+  },
+  "retrieved_pages": {
+    "interface_profiles": [
+      "interface_profile_id_selected_by_request"
+    ],
+    "spec_constraints": [
+      "constraint_id_selected_from_tier_0_evidence"
+    ],
+    "design_rules": [
+      "design_rule_id_selected_by_topics"
+    ],
+    "stackups": [
+      "stackup_profile_id_matching_material_and_layers"
+    ],
+    "validation": [
+      "validation_metric_or_flow_id_matching_required_benchmark"
+    ]
+  },
+  "evidence_gaps": [
+    {
+      "id": "missing_required_tier_0_value",
+      "severity": "blocker",
+      "required_source_tier": "tier_0"
+    }
+  ],
+  "strategy_output_map": {
+    "routing": {
+      "from": [
+        "design_rule_id"
+      ]
+    },
+    "si_checks": {
+      "from": [
+        "validation_metric_id"
+      ]
+    },
+    "pi_checks": {
+      "from": [
+        "validation_metric_id_if_applicable"
+      ]
+    },
+    "validation_benches": {
+      "from": [
+        "validation_flow_id"
+      ]
+    },
+    "compliance": {
+      "from": [
+        "spec_constraint_id"
+      ]
+    }
+  },
+  "spec_bench_requirements": {
+    "schema_version": "spec_bench_requirements_v1",
+    "metric_requirements": [
+      {
+        "id": "spec_req_metric_name",
+        "metric_name": "eye_mask",
+        "domain": "statistical_transient",
+        "default_bench": "eye_mask_check",
+        "required_inputs": [
+          "channel model",
+          "source/load model",
+          "data rate",
+          "mask geometry"
+        ],
+        "source_tier": "tier_0",
+        "evidence_ids": [
+          "candidate_or_reviewed_evidence_id"
+        ],
+        "pass_fail_equation": "extract_from_evidence_candidates",
+        "status": "source_candidates_found",
+        "review_status": "requires_review"
+      }
+    ],
+    "coverage_matrix": [
+      {
+        "metric_name": "eye_mask",
+        "domain": "statistical_transient",
+        "status": "source_candidates_found",
+        "default_bench": "eye_mask_check",
+        "evidence_count": 1
+      }
+    ],
+    "implementation_adapter": {
+      "profile": "optional_tool_adapter",
+      "status": "optional_adapter_must_not_override_required_benches"
+    },
+    "generic_implementation_benches": [
+      {
+        "id": "generic_touchstone_insertion_loss",
+        "implements_requirement": "spec_req_insertion_loss",
+        "metric_name": "insertion_loss",
+        "status": "generic_implementation_available",
+        "tool": "touchstone_sparameter_report"
+      }
+    ],
+    "blocked_benches": [
+      {
+        "id": "blocked_eye_mask",
+        "metric_name": "eye_mask",
+        "implements_requirement": "spec_req_eye_mask",
+        "status": "blocked_no_generic_implementation",
+        "required_action": "select_or_create_tool_adapter_for_this_metric_family"
+      }
+    ]
+  }
+}

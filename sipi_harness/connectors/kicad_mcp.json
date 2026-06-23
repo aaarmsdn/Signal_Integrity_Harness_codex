@@ -1,0 +1,51 @@
+{
+  "id": "kicad_mcp",
+  "name": "KiCAD MCP",
+  "status": "portable_template",
+  "server_path_env": "SIPI_KICAD_MCP_REPO",
+  "entrypoint": "%SIPI_KICAD_MCP_REPO%/dist/index.js",
+  "codex_config": "<repo>/.codex-kicad-mcp.toml",
+  "kicad_bin_env": "KICAD_BIN",
+  "python_path": "%KICAD_BIN%/python.exe",
+  "pythonpath": "%KICAD_BIN%/Lib/site-packages",
+  "transport": "stdio",
+  "smoke_status": {
+    "ok": true,
+    "tool_count": 155,
+    "verified_at": "2026-06-08",
+    "note": "Node stdio MCP initialize/tools-list smoke passed with workspace-local KiCad Python user-site .pth injection."
+  },
+  "backend_policy": "auto: use KiCad IPC when UI server is available, otherwise use SWIG/file-based backend where supported",
+  "sipi_use_cases": [
+    "Create SI/PI example PCB projects from wiki/spec requirements",
+    "Apply net classes, controlled-width routing constraints, and DRC rules",
+    "Place decoupling capacitors and power/ground via structures",
+    "Create copper pours, stitching vias, and differential pair routes",
+    "Export board facts as evidence for PyAEDT/ADS extraction workflow"
+  ],
+  "high_value_tools": [
+    "create_project",
+    "open_project",
+    "save_project",
+    "snapshot_project",
+    "set_board_size",
+    "add_board_outline",
+    "place_component",
+    "create_netclass",
+    "route_trace",
+    "route_differential_pair",
+    "add_via",
+    "add_gnd_stitching_vias",
+    "add_copper_pour",
+    "set_design_rules",
+    "run_drc",
+    "get_drc_violations",
+    "export_gerber",
+    "export_bom"
+  ],
+  "verification": [
+    "npm run build in KiCAD MCP repo",
+    "npm run smoke:kicad-mcp in sipi_harness",
+    "Manual UI test: open KiCad, enable IPC API Server, then ask MCP to run check_kicad_ui if available"
+  ]
+}

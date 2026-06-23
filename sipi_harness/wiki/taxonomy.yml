@@ -1,0 +1,75 @@
+interfaces:
+  - UCIe
+  - PCIe
+  - CXL
+  - DDR
+  - LPDDR
+  - HBM
+  - SerDes
+
+package_type:
+  - organic_package
+  - standard_package
+  - advanced_package
+  - silicon_interposer
+  - RDL
+  - bridge
+  - substrate
+
+design_stage:
+  - strategy
+  - pre_layout
+  - layout
+  - extraction
+  - em_solve
+  - circuit_sim
+  - compliance
+  - report
+
+si_topic:
+  - impedance
+  - insertion_loss
+  - return_loss
+  - crosstalk
+  - NEXT
+  - FEXT
+  - mode_conversion
+  - skew
+  - jitter
+  - eye_diagram
+  - BER
+  - S_parameter
+  - TDR
+
+pi_topic:
+  - PDN_impedance
+  - IR_drop
+  - SSN
+  - ground_bounce
+  - rail_noise
+  - decap
+  - target_impedance
+
+routing_topic:
+  - channel_routing
+  - escape_routing
+  - differential_pair
+  - single_ended
+  - length_matching
+  - pair_to_pair_spacing
+  - via_transition
+  - via_stub
+  - reference_plane
+  - return_path
+  - guard_trace
+
+validation_topic:
+  - field_solver
+  - 2D_extraction
+  - 2_5D_extraction
+  - 3D_EM
+  - Touchstone
+  - ADS
+  - HFSS_3D_Layout
+  - compliance_check
+  - margin_report

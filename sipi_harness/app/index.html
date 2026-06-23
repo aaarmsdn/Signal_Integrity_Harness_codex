@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SI/PI LLM Wiki Graph</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>SI/PI LLM Wiki Graph</h1>
+        <p>GraphRAG-style knowledge base for PCB signal and power integrity engineering.</p>
+      </div>
+      <label class="search">
+        <span>Search</span>
+        <input id="searchInput" type="search" placeholder="PDN, Target Impedance, Return Path">
+      </label>
+      <div class="filters" aria-label="Graph filters">
+        <label>
+          <span>Kind</span>
+          <select id="kindFilter">
+            <option value="">All</option>
+          </select>
+        </label>
+        <label>
+          <span>Topic</span>
+          <select id="topicFilter">
+            <option value="">All</option>
+          </select>
+        </label>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="graph-panel" aria-label="Knowledge graph">
+        <svg id="graph" role="img" aria-label="SI/PI knowledge graph"></svg>
+      </section>
+      <aside class="detail-panel">
+        <div id="stats" class="stats"></div>
+        <div id="insights" class="insights"></div>
+        <div id="details" class="details"></div>
+      </aside>
+    </main>
+
+    <script src="./graph-data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

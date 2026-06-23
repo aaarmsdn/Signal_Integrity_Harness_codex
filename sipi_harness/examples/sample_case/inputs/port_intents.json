@@ -1,0 +1,71 @@
+{
+  "schema": "sipi-harness.port-intents.v1",
+  "unit": "mm",
+  "expected_port_count": 4,
+  "ports": [
+    {
+      "name": "lane0_tx_near",
+      "type": "circuit",
+      "net": "lane0",
+      "reference_net": "GND",
+      "positive_layer": "F.Cu",
+      "negative_layer": "In1.Cu",
+      "x": 0.0,
+      "y": 0.0,
+      "positive_x": 0.0,
+      "positive_y": 0.0,
+      "negative_x": -0.08,
+      "negative_y": 0.0,
+      "impedance_ohm": 50,
+      "role": "tx_near"
+    },
+    {
+      "name": "lane0_rx_far",
+      "type": "circuit",
+      "net": "lane0",
+      "reference_net": "GND",
+      "positive_layer": "F.Cu",
+      "negative_layer": "In1.Cu",
+      "x": 10.0,
+      "y": 0.0,
+      "positive_x": 10.0,
+      "positive_y": 0.0,
+      "negative_x": 10.08,
+      "negative_y": 0.0,
+      "impedance_ohm": 50,
+      "role": "rx_far"
+    },
+    {
+      "name": "lane1_tx_near",
+      "type": "circuit",
+      "net": "lane1",
+      "reference_net": "GND",
+      "positive_layer": "B.Cu",
+      "negative_layer": "In2.Cu",
+      "x": 0.0,
+      "y": 0.2,
+      "positive_x": 0.0,
+      "positive_y": 0.2,
+      "negative_x": -0.08,
+      "negative_y": 0.2,
+      "impedance_ohm": 50,
+      "role": "tx_near"
+    },
+    {
+      "name": "lane1_rx_far",
+      "type": "circuit",
+      "net": "lane1",
+      "reference_net": "GND",
+      "positive_layer": "B.Cu",
+      "negative_layer": "In2.Cu",
+      "x": 10.0,
+      "y": 0.2,
+      "positive_x": 10.0,
+      "positive_y": 0.2,
+      "negative_x": 10.08,
+      "negative_y": 0.2,
+      "impedance_ohm": 50,
+      "role": "rx_far"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+# Example local tool profile.
+# Copy to a local ignored file or set equivalent environment variables.
+
+kicad:
+  cli: null                  # Example: C:/Program Files/KiCad/8.0/bin/kicad-cli.exe
+  mcp_server: null
+
+aedt:
+  version: "2025.1"
+  python: null               # Example: C:/Users/me/anaconda3/envs/aedt_env/python.exe
+  non_graphical_default: true
+  temp_dir: null
+
+ads:
+  min_version: "2025 Update 2"
+  hpeesof_dir: null          # Example: C:/Program Files/Keysight/ADS2026_Update2
+  ads_python: null           # Example: <HPEESOF_DIR>/tools/python/python.exe
+
+browser:
+  graph_viewer_url: "http://127.0.0.1:8765/app/"

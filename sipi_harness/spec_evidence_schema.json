@@ -1,0 +1,94 @@
+{
+  "schema_version": "spec_evidence_v1",
+  "description": "Case-local governing specification evidence bundle. This is separate from the reusable LLM wiki.",
+  "bundle_root": "outputs/<case>/spec_evidence",
+  "files": {
+    "spec_manifest.json": {
+      "required": [
+        "schema_version",
+        "source_pdf",
+        "source_sha256",
+        "tag",
+        "page_count",
+        "processed_pages",
+        "review_policy"
+      ],
+      "purpose": "Document provenance and review policy for a source specification."
+    },
+    "spec_inventory.json": {
+      "required": [
+        "schema_version",
+        "source_pdf",
+        "ranked_pages",
+        "pages"
+      ],
+      "purpose": "Whole-document page inventory with artifact paths and retrieval scores."
+    },
+    "spec_candidates.json": {
+      "required": [
+        "schema_version",
+        "source_pdf",
+        "candidate_count",
+        "candidates",
+        "classification_targets"
+      ],
+      "purpose": "Unreviewed candidate requirements, figures, tables, equations, maps, masks, and loading models."
+    },
+    "spec_review_queue.json": {
+      "required": [
+        "schema_version",
+        "status",
+        "source_pdf",
+        "review_items"
+      ],
+      "purpose": "Engineer classification/review queue before evidence can drive geometry or compliance."
+    }
+  },
+  "candidate_record": {
+    "required": [
+      "id",
+      "page",
+      "kind",
+      "text",
+      "source_pdf",
+      "source_id",
+      "extraction_method",
+      "reviewer_status"
+    ],
+    "optional": [
+      "label",
+      "bbox",
+      "page_render_path",
+      "raw_text_path",
+      "blocks_path",
+      "requires_render_review",
+      "needs_engineer_classification"
+    ],
+    "allowed_reviewer_status": [
+      "unreviewed",
+      "visual_cross_check_needed",
+      "visual_cross_checked",
+      "approved_for_design",
+      "proxy",
+      "rejected"
+    ],
+    "allowed_classification_targets": [
+      "spec_constraint",
+      "interface_profile",
+      "stackup_profile",
+      "validation_metric",
+      "validation_flow",
+      "bump_or_pin_map",
+      "loading_model",
+      "eye_mask",
+      "equation",
+      "ignore"
+    ]
+  },
+  "promotion_rules": [
+    "Candidate numeric values are not compliance constraints until reviewed.",
+    "Compliance thresholds require reviewer_status approved_for_design and tier_0 source provenance.",
+    "Figure-derived geometry requires reviewer_status visual_cross_checked or approved_for_design before layout generation.",
+    "Every generated coordinate, net, port, and bench parameter derived from spec evidence must reference the source candidate or reviewed evidence record."
+  ]
+}

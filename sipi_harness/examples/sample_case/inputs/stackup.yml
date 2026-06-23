@@ -1,0 +1,9 @@
+units: mm
+layers:
+  - {name: F.Cu, type: signal, thickness_mm: 0.018, material: copper, reference: In1.Cu}
+  - {name: dielectric_1, type: dielectric, thickness_mm: 0.100, material: organic_demo, dk: 3.4, df: 0.01}
+  - {name: In1.Cu, type: plane, thickness_mm: 0.018, material: copper, net: GND}
+  - {name: dielectric_2, type: dielectric, thickness_mm: 0.500, material: organic_demo, dk: 3.4, df: 0.01}
+  - {name: In2.Cu, type: plane, thickness_mm: 0.018, material: copper, net: GND}
+  - {name: dielectric_3, type: dielectric, thickness_mm: 0.100, material: organic_demo, dk: 3.4, df: 0.01}
+  - {name: B.Cu, type: signal, thickness_mm: 0.018, material: copper, reference: In2.Cu}

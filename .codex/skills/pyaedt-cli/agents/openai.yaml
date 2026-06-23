@@ -1,0 +1,4 @@
+interface:
+  display_name: "PyAEDT CLI"
+  short_description: "Control AEDT through the PyAEDT command line."
+  default_prompt: "Use the PyAEDT CLI skill to inspect or control AEDT sessions, projects, designs, script execution, exports, and documentation commands."

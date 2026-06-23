@@ -1,0 +1,117 @@
+# Local machine/tool configuration
+.codex-*.toml
+*.local
+*.env
+*.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Node/frontend dependencies and build output
+node_modules/
+package-lock.json
+dist/
+build/
+.vite/
+
+# Generated harness outputs
+outputs/
+reports/
+sipi_harness/examples/**/_smoke_output/
+*.log
+*.rpt
+*.tmp
+*.bak
+
+# Ansys / AEDT / EDB generated artifacts
+*.aedt
+*.aedtresults/
+*.aedb/
+*.aedt.lock
+*.lock
+*.defeatured/
+
+# Touchstone and simulation datasets generated from case runs
+*.s1p
+*.s2p
+*.s4p
+*.s8p
+*.s16p
+*.s32p
+*.ds
+*.dds
+*.raw
+
+# Keysight ADS generated workspaces and local simulator config
+*.wrk/
+workspace.ads
+de_sim.cfg
+hpeesofsim.cfg
+simulations/
+
+# KiCad generated local/cache files
+*-backups/
+fp-info-cache
+*.kicad_prl
+*.kicad_pro-bak
+*.kicad_pcb-bak
+
+# Generated inventories and extracted reference chunks
+pyaedt_api_inventory*
+pyaedt_application_api_inventory*
+sipi_harness/obsidian_vault/
+sipi_harness/data/*.json
+!sipi_harness/data/*.example.json
+!sipi_harness/data/.gitkeep
+sipi_harness/data/book_chunks/
+sipi_harness/data/local_book_sources.json
+sipi_harness/data/spec_projects.json
+sipi_harness/wiki/raw/**
+!sipi_harness/wiki/raw/
+!sipi_harness/wiki/raw/**/
+!sipi_harness/wiki/raw/**/README.md
+!sipi_harness/wiki/raw/**/.gitkeep
+sipi_harness/knowledge_intake/web_research/*
+!sipi_harness/knowledge_intake/web_research/.gitkeep
+!sipi_harness/knowledge_intake/web_research/README.md
+sipi_harness/knowledge_intake/user_references/*
+!sipi_harness/knowledge_intake/user_references/.gitkeep
+!sipi_harness/knowledge_intake/user_references/README.md
+sipi_harness/knowledge_intake/processed/*
+!sipi_harness/knowledge_intake/processed/.gitkeep
+!sipi_harness/knowledge_intake/processed/README.md
+sipi_harness/KiCad/
+sipi_harness/app/graph-data.js
+sipi_harness/wiki/.obsidian/
+sipi_harness/scripts/*ucie*
+sipi_harness/scripts/*UCIe*
+sipi_harness/scripts/open_ads_ucie_clean_workspace.*
+sipi_harness/scripts/create_bump_to_bump_4layer_route.py
+sipi_harness/scripts/create_crosstalk_spaced_bump_to_bump_route.py
+sipi_harness/scripts/generate_ads_vtf_curve_report.py
+sipi_harness/scripts/ingest_local_books.mjs
+sipi_harness/scripts/register_local_books.mjs
+sipi_harness/scripts/register_spec_projects.mjs
+sipi_harness/scripts/aedt_runscript_smoke.py
+sipi_harness/scripts/export_ads_schematic_netlist.py
+sipi_harness/scripts/inspect_ads_*.py
+sipi_harness/scripts/inspect_pyaedt_desktop_api.py
+
+# Downloaded/vendor tool bundles kept locally for experimentation
+*.zip
+kicad-happy-main-src/
+KiCAD-MCP-Server-main-src/
+
+# Unrelated local application experiments in this workspace
+hynix_apartment_apk/
+hynix_shuttle_apartment_app/
+kicad_dataspec_designer/
+_clone_test*/
+_fresh_*/
+_local_sources/
