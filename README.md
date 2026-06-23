@@ -96,6 +96,13 @@ Core rules:
 
 ## Sharing Policy
 
+Datasheets, specifications, papers, books, internal notes, and other wiki/source
+materials are intentionally not uploaded to this public Git repository because
+they may be copyrighted, licensed, or proprietary. The `sipi_harness/wiki/raw/`
+folders are local staging areas: users should place only documents they are
+allowed to process on their own machine, and should not commit those source
+documents unless they have redistribution rights.
+
 Safe to share:
 
 - harness scripts,
